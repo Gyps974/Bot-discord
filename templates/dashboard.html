@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Set Bot Status</h2>
+            <form id="set-status-form">
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required>
+                <button type="submit">Set Status</button>
+            </form>
+        </section>
+        <section>
+            <h2>Send Message</h2>
+            <form id="send-message-form">
+                <label for="channel_id">Channel ID:</label>
+                <input type="text" id="channel_id" name="channel_id" required>
+                <label for="message">Message:</label>
+                <input type="text" id="message" name="message" required>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <section>
+            <h2>Create Role</h2>
+            <form id="create-role-form">
+                <label for="role_name">Role Name:</label>
+                <input type="text" id="role_name" name="role_name" required>
+                <button type="submit">Create Role</button>
+            </form>
+        </section>
+        <section>
+            <h2>Server Info</h2>
+            <button id="get-server-info">Get Server Info</button>
+            <div id="server-info"></div>
+        </section>
+    </main>
+</body>
+</html>
